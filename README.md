@@ -1,11 +1,11 @@
 ## A LaTeX Resume, Cover Letter, and Reference Formatter
 
 ### Sample Output
-[resume_sample]("./samples/sample.pdf)
+[resume_sample](samples/sample.pdf)
 
-[coverletter_sample]("./samples/sample_cover_letter.pdf)
+[coverletter_sample](samples/sample_cover_letter.pdf)
 
-[references_sample]("./samples/sample_references.pdf)
+[references_sample](samples/sample_references.pdf)
 
 ### Requirements
 - LaTeX distribution (e.g., TeX Live, MikTeX)
