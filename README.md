@@ -2,7 +2,9 @@
 
 ### Sample Output
 [resume_sample]("./samples/sample.pdf)
+
 [coverletter_sample]("./samples/sample_cover_letter.pdf)
+
 [references_sample]("./samples/sample_references.pdf)
 
 ### Requirements
