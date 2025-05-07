@@ -1,0 +1,126 @@
+%-------------------------
+% Resume in Latex
+% Author : Matthew Jacobsen
+% Based off of: https://github.com/jakeryang/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{paralist}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{soul}
+% only for pdflatex
+% \input{glyphtounicode}
+\usepackage{fontawesome5}
+\usepackage[scale=0.90,lf]{FiraMono}
+
+\definecolor{dark-color}{gray}{0.0}
+
+\DeclareRobustCommand{\ebseries}{\fontseries{eb}\selectfont}
+\DeclareTextFontCommand{\texteb}{\ebseries}
+
+\usepackage{tgheros}
+\usepackage[T1]{fontenc}
+\usepackage{ifthen}
+\usepackage[
+  headheight=.75in,
+  headsep=0.2in,
+  left=0.5in,
+  right=0.5in,
+  top=1.0in,
+  bottom=1in]{geometry}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}\nolinebreak}
+  }
+}
+
+% Reference entry command
+\newcommand{\referenceEntry}[6]{
+  \vspace{0.8em}
+  \noindent
+  \textbf{#1} \\ % Full name
+  #2 at #3 \\   % Position at Company
+  Phone: #4 \\  % Phone number
+  Email: #5\ifthenelse{\equal{#6}{}}{}{ / #6} \\ % Primary email [+ secondary if exists]
+}
+
+% Sub Heading with 2 rows of test {company, location} {Dates}
+% {position (in bold)} {years} {description} {right side text}
+\newcommand{\resumeSubheading}[5]{
+  \item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      #1 & {\color{dark-color}\scriptsize #2}\vspace{1pt}\\ % top row of resume entry
+      {\textbf{#3} {#4}} & {\color{dark-color} \scriptsize #5}\\ % second row of resume entry
+    \end{tabular*}\vspace{-4pt}
+}
+
+% SubHeader with 1 row of text for additional positions at the same company
+% {position} {years} {extra text}
+\newcommand{\resumeSubheadingTwo}[3]{
+  \item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      {\textbf{#1} {#2}} & {\color{dark-color} \scriptsize #3}\\
+    \end{tabular*}\vspace{-4pt}
+}
+
+% define \publication{authors}{title}{journal}{vol(pages)}{year}
+\newcommand{\publication}[6]{\raggedright%
+  \textbf{#1},\ % authors in bold
+  “\emph{#2},”\ % paper title in italics-with-quotes
+  #3,\ #4. (#5). \url{#6}% journal, vol/pages (year).
+}
+
+\newcommand{\rom}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+% CHANGED default leftmargin  0.15 in
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-4pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
+
+\newcommand{\ublue}[1]{{\color{blue}\ul{#1}}}
+\pagestyle{fancy}
+\titleformat{\section}
+  {\normalfont\large\bfseries\center} % Format: font, size, weight
+  {}                           % Label (we're omitting numbering)
+  {0pt}                        % Spacing between label and title
+  {}                           % Before the title
+  []                           % After the title
+\titlespacing*{\section}{0pt}{6pt plus 2pt minus 1pt}{4pt plus 1pt minus 1pt}
+
+%----------FOOTER-----------
+\fancyfoot{}
+%----------HEADING----------
+\fancyhf{} % clear all header and footer fields
+\include{./sections_sample/meta.tex}
+\fancyhead[L]{
+  \textbf{{\Large \name}}, \normalsize \title \hfill{}\thepage{}\vspace{2pt}\\
+  \address\ | \email\ | \linkedin\ | \phone\
+}
+\renewcommand{\headrulewidth}{0.4pt}
+\setul{0.3ex}{0.1ex}
+\setulcolor{blue}
