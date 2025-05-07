@@ -33,16 +33,8 @@
 \usepackage{tgheros}
 \usepackage[T1]{fontenc}
 \usepackage{ifthen}
-\usepackage[
-  headheight=.75in,
-  headsep=0.2in,
-  left=0.5in,
-  right=0.5in,
-  top=1.0in,
-  bottom=1in]{geometry}
 
 \urlstyle{same}
-
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
@@ -86,7 +78,7 @@
 }
 
 % define \publication{authors}{title}{journal}{vol(pages)}{year}
-\newcommand{\publication}[6]{\raggedright%
+\newcommand{\publication}[6]{\center%
   \textbf{#1},\ % authors in bold
   “\emph{#2},”\ % paper title in italics-with-quotes
   #3,\ #4. (#5). \url{#6}% journal, vol/pages (year).
@@ -102,26 +94,38 @@
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
 
-\newcommand{\ublue}[1]{{\color{blue}\ul{#1}}}
+\usepackage[
+  headheight=.75in,
+  headsep=0.2in,
+  left=0.5in,
+  right=0.5in,
+  top=1.0in,
+  bottom=1in]{geometry}
+
 \pagestyle{fancy}
+% Section title formatting
 \titleformat{\section}
-  {\normalfont\large\bfseries\center} % Format: font, size, weight
-  {}                           % Label (we're omitting numbering)
-  {0pt}                        % Spacing between label and title
-  {}                           % Before the title
-  []                           % After the title
+{\normalfont\large\bfseries\center} % Format: font, size, weight
+{}                           % Label (we're omitting numbering)
+{0pt}                        % Spacing between label and title
+{}                           % Before the title
+[]                           % After the title
 \titlespacing*{\section}{0pt}{6pt plus 2pt minus 1pt}{4pt plus 1pt minus 1pt}
+
+\input{configurations.tex}
+\input{\sections_path/meta.tex}
 
 %----------FOOTER-----------
 \fancyfoot{}
 %----------HEADING----------
 \fancyhf{} % clear all header and footer fields
-\include{configurations.tex}
-\include{\sections_path/meta.tex}
 \fancyhead[L]{
-  \textbf{{\Large \name}}, \normalsize \title \hfill{}\thepage{}\vspace{2pt}\\
-  \address\ | \email\ | \linkedin\ | \phone\
+  \textbf{{\Large \name}}, | \normalsize{\phone}\ | \normalsize{\email}\ \hfill{}\thepage{}\vspace{2pt}
 }
+\fancypagestyle{firstpage}{
+  \lhead{
+      \textbf{{\Large \name}}, \normalsize{\title}\hfill{}\thepage{}\vspace{2pt}\\
+      \address\ | \email\ | \linkedin\ | \phone\
+  }}
+
 \renewcommand{\headrulewidth}{0.4pt}
-\setul{0.3ex}{0.1ex}
-\setulcolor{blue}

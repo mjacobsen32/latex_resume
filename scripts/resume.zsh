@@ -56,19 +56,19 @@ if [ $build_resume ]
 then
   if [ $verbose ]; then echo "Building resume"; fi
   latexmk -pdf -outdir=build "$build_verbosity" -jobname=${out_name} resume.tex
-  mv -f "./build/${out_name}.pdf" $out_dir
+  cp -f "./build/${out_name}.pdf" $out_dir
 fi
 
 if [ $build_cover_letter ]
 then
   if [ $verbose ]; then echo "Building cover letter"; fi
   latexmk -pdf -outdir=build "$build_verbosity" -jobname="${out_name}_cover_letter" cover_letter.tex
-  mv -f "./build/${out_name}_cover_letter.pdf" $out_dir
+  cp -f "./build/${out_name}_cover_letter.pdf" $out_dir
 fi
 
 if [ $build_references ]
 then
   if [ $verbose ]; then echo "Building references"; fi
   latexmk -pdf -outdir=build "$build_verbosity" -jobname="${out_name}_references" references.tex
-  mv -f "./build/${out_name}_references.pdf" $out_dir
+  cp -f "./build/${out_name}_references.pdf" $out_dir
 fi
